@@ -24,7 +24,7 @@
                   <TableColumn fx:id="birthdateColumn" prefWidth="90.0" text="Birth Date" />
               </columns>
             </TableView>
-            <Text layoutX="364.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Database Content">
+            <Text layoutX="364.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Database Content" AnchorPane.leftAnchor="364.0" AnchorPane.rightAnchor="364.0" AnchorPane.topAnchor="26.0">
                <font>
                   <Font name="Constantia Bold" size="20.0" />
                </font>
@@ -32,17 +32,17 @@
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
-            <Button layoutX="174.0" layoutY="30.0" mnemonicParsing="false" text="Add Person">
+            <Button layoutX="174.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleAddPerson" text="Add Person">
                <font>
                   <Font name="Constantia" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="313.0" layoutY="30.0" mnemonicParsing="false" text="Delete Person">
+            <Button layoutX="313.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleDeletePerson" text="Delete Person">
                <font>
                   <Font name="Constantia" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="478.0" layoutY="30.0" mnemonicParsing="false" text="Update Person">
+            <Button layoutX="478.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleUpdatePerson" text="Update Person">
                <font>
                   <Font name="Constantia" size="14.0" />
                </font>

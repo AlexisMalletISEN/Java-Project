@@ -74,4 +74,38 @@ public class PersonDao {
 			return null;
 		}
 	}
+	
+	// Update a person
+	public void updatePerson(Integer id, Person person) throws Exception {
+		try (Connection connection = DataSourceFactory.getDataSource().getConnection()) {
+			String sqlQuery = "UPDATE person SET lastname = ?, firstname = ?, nickname = ?, phone_number = ?, address = ?, email_address = ?, birth_date = ? WHERE idperson = ?";
+			try (PreparedStatement statement = connection.prepareStatement(sqlQuery)) {
+				statement.setString(1, person.getLastname());
+				statement.setString(2, person.getFirstname());
+				statement.setString(3, person.getNickname());
+				statement.setString(4, person.getPhoneNumber());
+				statement.setString(5, person.getAddress());
+				statement.setString(6, person.getEmailAddress());
+				statement.setDate(7, java.sql.Date.valueOf(person.getBirthDate()));
+				statement.setInt(8, id);
+				statement.executeUpdate();
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	// Delete a person
+	public void deletePerson(Integer id) throws Exception {
+		try (Connection connection = DataSourceFactory.getDataSource().getConnection()) {
+			String sqlQuery = "DELETE FROM person WHERE idperson = ?";
+			try (PreparedStatement statement = connection.prepareStatement(sqlQuery)) {
+				statement.setInt(1, id);
+				statement.executeUpdate();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }

@@ -1,8 +1,10 @@
 package isen.project.view;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
+import isen.project.App;
 import isen.project.db.PersonDao;
 import isen.project.model.Person;
 import isen.project.util.*;
@@ -66,9 +68,26 @@ public class PersonOverviewController {
 			@Override
 			public void handleNewValue(Person newValue) {
 				selectedPerson = newValue;
-				System.out.println("Selected person: " + selectedPerson);
 			}
 		});
 	}
 	
+	@FXML
+	public void handleDeletePerson() throws Exception {
+		personDao.deletePerson(selectedPerson.getIdperson());
+		persons = personDao.listPersons();
+		populateList();
+	}
+	
+	@FXML
+	public void handleUpdatePerson() throws IOException {
+		PersonFormController.retrieveData(selectedPerson);
+		App.setRoot("PersonForm");
+	}
+	
+	@FXML
+	public void handleAddPerson() throws IOException {
+		PersonFormController.retrieveData(null);
+		App.setRoot("PersonForm");
+	}
 }

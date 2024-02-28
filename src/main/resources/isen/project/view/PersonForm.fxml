@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.85" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="isen.project.view.PersonFormController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Text layoutX="331.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Person creation / edition" textAlignment="CENTER" AnchorPane.leftAnchor="331.0" AnchorPane.rightAnchor="331.0" AnchorPane.topAnchor="26.0">
+               <font>
+                  <Font name="Constantia Bold" size="20.0" />
+               </font>
+            </Text>
+            <Label layoutX="85.0" layoutY="106.0" text="Lastname" AnchorPane.leftAnchor="80.0" />
+            <Label layoutX="435.0" layoutY="106.0" text="Firstname" AnchorPane.leftAnchor="310.0" />
+            <Label layoutX="557.0" layoutY="106.0" text="Nickname" />
+            <Label layoutX="80.0" layoutY="174.0" text="Phone Number" />
+            <Label layoutX="381.0" layoutY="174.0" text="Email Address" />
+            <Label layoutX="80.0" layoutY="243.0" text="Address" />
+            <Label layoutX="81.0" layoutY="310.0" text="Birthdate" />
+            <DatePicker fx:id="birthdatePicker" layoutX="140.0" layoutY="306.0" />
+            <TextField fx:id="lastNameField" layoutX="140.0" layoutY="102.0" />
+            <TextField fx:id="firstNameField" layoutX="375.0" layoutY="102.0" />
+            <TextField fx:id="nicknameField" layoutX="624.0" layoutY="102.0" />
+            <TextField fx:id="phoneField" layoutX="173.0" layoutY="170.0" prefHeight="26.0" prefWidth="169.0" />
+            <TextField fx:id="emailField" layoutX="462.0" layoutY="170.0" prefHeight="26.0" prefWidth="312.0" />
+            <TextField fx:id="addressField" layoutX="132.0" layoutY="240.0" prefHeight="26.0" prefWidth="643.0" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Button layoutX="402.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleClearButton" text="Clear Inputs">
+               <font>
+                  <Font name="Constantia" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="578.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleSaveButton" text="Save Person">
+               <font>
+                  <Font name="Constantia" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="240.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleCancelButton" text="Cancel">
+               <font>
+                  <Font name="Constantia" size="14.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

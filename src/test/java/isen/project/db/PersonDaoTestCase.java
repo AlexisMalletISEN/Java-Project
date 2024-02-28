@@ -100,16 +100,48 @@ public class PersonDaoTestCase {
     }
 	
 	@Test
-	public void shouldDeletePerson() throws Exception {
+	public void shouldUpdatePerson() throws Exception {
 		// GIVEN
+		Person person = new Person(0, "Allen", "Tim", "Timmy", "1234567890", "1234 Elm Street", "allen.tim@test.com", LocalDate.of(1970, 1, 1));
+		Person person2 = new Person(0, "Asley", "Rick", "GOD", "6669996669", "666 Elm Street", "asley.rick@test.com", LocalDate.of(1, 1, 1));
+		Person insertedPerson = personDao.insertPerson(person);
 		// WHEN
+		personDao.updatePerson(insertedPerson.getIdperson(), person2);
 		// THEN
+		// Check that the person has been updated in the database
+		Connection connection = DataSourceFactory.getDataSource().getConnection();
+		Statement statement = connection.createStatement();
+		ResultSet results = statement.executeQuery("SELECT * FROM person WHERE idperson = " + insertedPerson.getIdperson());
+		assertThat(results.next()).isTrue();
+		assertThat(results.getInt("idperson")).isEqualTo(insertedPerson.getIdperson());
+		assertThat(results.getString("lastname")).isEqualTo("Asley");
+		assertThat(results.getString("firstname")).isEqualTo("Rick");
+		assertThat(results.getString("nickname")).isEqualTo("GOD");
+		assertThat(results.getString("phone_number")).isEqualTo("6669996669");
+		assertThat(results.getString("address")).isEqualTo("666 Elm Street");
+		assertThat(results.getString("email_address")).isEqualTo("asley.rick@test.com");
+		assertThat(results.getDate("birth_date").toLocalDate()).isEqualTo(LocalDate.of(1, 1, 1));
+		assertThat(results.next()).isFalse();
+		results.close();
+		statement.close();
+		connection.close();		
 	}
 	
 	@Test
-	public void shouldUpdatePerson() throws Exception {
+	public void shouldDeletePerson() throws Exception {
 		// GIVEN
+		Person person = new Person(0, "Asley", "Rick", "GOD", "6669996669", "666 Elm Street", "asley.rick@test.com", LocalDate.of(1, 1, 1));
+		Person insertedPerson = personDao.insertPerson(person);
 		// WHEN
+		personDao.deletePerson(insertedPerson.getIdperson());
 		// THEN
+		// Check that the person has been deleted from the database
+		Connection connection = DataSourceFactory.getDataSource().getConnection();
+		Statement statement = connection.createStatement();
+		ResultSet results = statement.executeQuery("SELECT * FROM person WHERE idperson = " + insertedPerson.getIdperson());
+		assertThat(results.next()).isFalse();
+		results.close();
+		statement.close();
+		connection.close();
 	}
 }
