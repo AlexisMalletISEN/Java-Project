@@ -2,92 +2,177 @@ package isen.project.model;
 
 import java.time.LocalDate;
 
+/**
+ * Represents a person entity with various attributes.
+ */
 public class Person {
-	
-	private int idperson;
-	private String lastname;
-	private String firstname;
-	private String nickname;
-	private String phoneNumber;
-	private String address;
-	private String emailAddress;
-	private LocalDate birthDate;
-	
-	public Person() {
-	}
-	
-	public Person(int idperson, String lastname, String firstname, String nickname, String phoneNumber, String address, String emailAddress, LocalDate birthDate) {
-		this.setIdperson(idperson);
-		this.setLastname(lastname);
-		this.setFirstname(firstname);
-		this.setNickname(nickname);
-		this.setPhoneNumber(phoneNumber);
-		this.setAddress(address);
-		this.setEmailAddress(emailAddress);
-		this.setBirthDate(birthDate);
-	}
+    
+    // Attributes of a person
+    private int idperson; // Unique identifier for the person
+    private String lastname; // Last name of the person
+    private String firstname; // First name of the person
+    private String nickname; // Nickname of the person
+    private String phoneNumber; // Phone number of the person
+    private String address; // Address of the person
+    private String emailAddress; // Email address of the person
+    private LocalDate birthDate; // Date of birth of the person
+    
+    /**
+     * Default constructor for Person class.
+     */
+    public Person() {
+    }
+    
+    /**
+     * Parameterized constructor for Person class.
+     * @param idperson The ID of the person.
+     * @param lastname The last name of the person.
+     * @param firstname The first name of the person.
+     * @param nickname The nickname of the person.
+     * @param phoneNumber The phone number of the person.
+     * @param address The address of the person.
+     * @param emailAddress The email address of the person.
+     * @param birthDate The birth date of the person.
+     */
+    public Person(int idperson, String lastname, String firstname, String nickname, String phoneNumber, String address, String emailAddress, LocalDate birthDate) {
+        // Set values for all attributes of the person
+        this.setIdperson(idperson);
+        this.setLastname(lastname);
+        this.setFirstname(firstname);
+        this.setNickname(nickname);
+        this.setPhoneNumber(phoneNumber);
+        this.setAddress(address);
+        this.setEmailAddress(emailAddress);
+        this.setBirthDate(birthDate);
+    }
 
-	public int getIdperson() {
-		return idperson;
-	}
+    // Getters and setters for person attributes
 
-	public void setIdperson(int idperson) {
-		this.idperson = idperson;
-	}
+    /**
+     * Get the ID of the person.
+     * @return The ID of the person.
+     */
+    public int getIdperson() {
+        return idperson;
+    }
 
-	public String getLastname() {
-		return lastname;
-	}
+    /**
+     * Set the ID of the person.
+     * @param idperson The ID of the person.
+     */
+    public void setIdperson(int idperson) {
+        this.idperson = idperson;
+    }
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
+    /**
+     * Get the last name of the person.
+     * @return The last name of the person.
+     */
+    public String getLastname() {
+        return lastname;
+    }
 
-	public String getFirstname() {
-		return firstname;
-	}
+    /**
+     * Set the last name of the person.
+     * @param lastname The last name of the person.
+     */
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
+    /**
+     * Get the first name of the person.
+     * @return The first name of the person.
+     */
+    public String getFirstname() {
+        return firstname;
+    }
 
-	public String getNickname() {
-		return nickname;
-	}
+    /**
+     * Set the first name of the person.
+     * @param firstname The first name of the person.
+     */
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
+    /**
+     * Get the nickname of the person.
+     * @return The nickname of the person.
+     */
+    public String getNickname() {
+        return nickname;
+    }
 
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
+    /**
+     * Set the nickname of the person.
+     * @param nickname The nickname of the person.
+     */
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
+    /**
+     * Get the phone number of the person.
+     * @return The phone number of the person.
+     */
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    /**
+     * Set the phone number of the person.
+     * @param phoneNumber The phone number of the person.
+     */
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    /**
+     * Get the address of the person.
+     * @return The address of the person.
+     */
+    public String getAddress() {
+        return address;
+    }
 
-	public String getEmailAddress() {
-		return emailAddress;
-	}
+    /**
+     * Set the address of the person.
+     * @param address The address of the person.
+     */
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public void setEmailAddress(String emailAddress) {
-		this.emailAddress = emailAddress;
-	}
+    /**
+     * Get the email address of the person.
+     * @return The email address of the person.
+     */
+    public String getEmailAddress() {
+        return emailAddress;
+    }
 
-	public LocalDate getBirthDate() {
-		return birthDate;
-	}
+    /**
+     * Set the email address of the person.
+     * @param emailAddress The email address of the person.
+     */
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
 
-	public void setBirthDate(LocalDate birthDate) {
-		this.birthDate = birthDate;
-	}
+    /**
+     * Get the birth date of the person.
+     * @return The birth date of the person.
+     */
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    /**
+     * Set the birth date of the person.
+     * @param birthDate The birth date of the person.
+     */
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
 }
